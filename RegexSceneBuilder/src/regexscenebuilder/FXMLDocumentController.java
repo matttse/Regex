@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package javafxscenebuilder;
+package regexscenebuilder;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -14,7 +14,7 @@ import javafx.scene.control.Label;
 
 /**
  *
- * @author tsemd
+ * @author Ender_Laptop
  */
 public class FXMLDocumentController implements Initializable {
     
@@ -22,9 +22,16 @@ public class FXMLDocumentController implements Initializable {
     private Label label;
     
     @FXML
-    private void handleButtonAction(ActionEvent event) {
-        System.out.println("You clicked me!");
-        label.setText("Hello World!");
+    private void handleButtonActionExit(ActionEvent event) {
+        System.exit(0);
+    }
+    @FXML
+    private void handleButtonActionResetSelection(ActionEvent event) {
+        Te
+    }
+    @FXML
+    private void handleButtonActionValidate(ActionEvent event) {
+        System.exit(0);
     }
     
     @Override
