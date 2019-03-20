@@ -11,23 +11,27 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
+//import javafx.scene.control.TextField;
 
 /**
  *
- * @author Ender_Laptop
+ * @author tsemd
  */
 public class FXMLDocumentController implements Initializable {
     
     @FXML
     private Label label;
-    
+//    private TextField textFieldPhoneNumber;
+//    private TextField textFieldEmailAddress;
     @FXML
     private void handleButtonActionExit(ActionEvent event) {
         System.exit(0);
     }
     @FXML
     private void handleButtonActionResetSelection(ActionEvent event) {
-        Te
+//        textFieldEmailAddress.setText("");
+//        textFieldPhoneNumber.setText("");
+        
     }
     @FXML
     private void handleButtonActionValidate(ActionEvent event) {

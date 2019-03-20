@@ -13,7 +13,7 @@ import javafx.stage.Stage;
 
 /**
  *
- * @author Ender_Laptop
+ * @author tsemd
  */
 public class inputValidator extends Application {
     
