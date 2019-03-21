@@ -6,7 +6,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="449.0" prefWidth="598.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="regexscenebuilder.FXMLDocumentController">
+<AnchorPane id="AnchorPane" prefHeight="449.0" prefWidth="598.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="regexscenebuilder.FXMLDocumentController">
     <children>
       <Pane layoutX="14.0" layoutY="15.0" prefHeight="380.0" prefWidth="569.0">
          <children>
@@ -16,7 +16,7 @@
             <TextField id="textFieldPhoneNumber" fx:id="textFieldPhoneNumber" layoutX="142.0" layoutY="10.0" prefHeight="25.0" prefWidth="355.0" promptText="555-555-5555" />
             <TextField id="textFieldEmailAddress" fx:id="textFieldEmailAddress" layoutX="142.0" layoutY="86.0" prefHeight="25.0" prefWidth="355.0" promptText="abc@abc.edu" />
             <Button layoutX="142.0" layoutY="178.0" mnemonicParsing="false" onAction="#handleButtonActionResetSelection" text="Reset Selection" />
-            <TextField editable="false" layoutX="142.0" layoutY="244.0" prefHeight="25.0" prefWidth="355.0" />
+            <TextField fx:id="ResultDisplay" editable="false" layoutX="142.0" layoutY="244.0" prefHeight="25.0" prefWidth="355.0" />
          </children>
       </Pane>
         <Button id="buttonExit" fx:id="buttonExit" layoutX="519.0" layoutY="410.0" onAction="#handleButtonActionExit" text="Exit" />
