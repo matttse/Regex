@@ -45,23 +45,28 @@ public class FXMLDocumentController implements Initializable {
       String emailPattern = "^((\"[\\w-\\s]+\")|([\\w-]+(?:\\.[\\w-]+)*)|(\"[\\w-\\s]+\")([\\w-]+(?:\\.[\\w-]+)*))(@((?:[\\w-]+\\.)*\\w[\\w-]{0,66})\\.([a-z]{2,6}(?:\\.[a-z]{2})?)$)|(@\\[?((25[0-5]\\.|2[0-4][0-9]\\.|1[0-9]{2}\\.|[0-9]{1,2}\\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\\]?$)";
       String phonePattern = "^(?:(?:\\+?1\\s*(?:[.-]\\s*)?)?(?:\\(\\s*([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9])\\s*\\)|([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9]))\\s*(?:[.-]\\s*)?)?([2-9]1[02-9]|[2-9][02-9]1|[2-9][02-9]{2})\\s*(?:[.-]\\s*)?([0-9]{4})(?:\\s*(?:#|x\\.?|ext\\.?|extension)\\s*(\\d+))?$";
       
-      boolean emailMatch = Pattern.matches(emailPattern, emailContent);
-      boolean phoneMatch = Pattern.matches(phonePattern, phoneContent);
+
       
       ResultDisplay.setVisible(true);
+        try {
+            boolean emailMatch = Pattern.matches(emailPattern, emailContent);
+            boolean phoneMatch = Pattern.matches(phonePattern, phoneContent);
+            if (emailMatch == true && phoneMatch == true) {
+                ResultDisplay.setText("Valid Fields");
+            } else {
+                ResultDisplay.setText("Invalid");
+                if (emailMatch == false) {
+                    ResultDisplay.setText(ResultDisplay.getText()+" Email");
+                }
+                if (phoneMatch == false) {
+                    ResultDisplay.setText(ResultDisplay.getText()+" Phone Number");
+                }
+
+            }
+        } catch (Exception e) {
+            ResultDisplay.setText("Error: "+e);
+        }
       
-      if (emailMatch == true && phoneMatch == true) {
-          ResultDisplay.setText("Valid Fields");
-      } else {
-          ResultDisplay.setText("Invalid");
-          if (emailMatch == false) {
-              ResultDisplay.setText(ResultDisplay.getText()+" Email");
-          }
-          if (phoneMatch == false) {
-              ResultDisplay.setText(ResultDisplay.getText()+" Phone Number");
-          }
-          
-      }
     }
     
     @Override
